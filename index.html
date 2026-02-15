@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LumiBox</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="Diego Emilio Flores González">
+  <meta name="keywords" content="Tailwind CSS Landing Page HTML CSS School Project Practice LumiBox Lumibox">
+  <meta name="description" content="Esta página es una landing page para un proyecto de la escuela, 
+  creada utilizando Tailwind CSS. El producto y empresa que por el momento es ficticia se llama LumiBox 
+  y se explica lo que es en el contenido de la página">
+
+  <link rel="stylesheet" href="./assets/output.css">
+
+  <!--Link Swiper's CSS ================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poller+One&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body class="bg-yellow-200">
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="navbar-icon" viewBox="0 0 16 16">
+      <path
+        d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+    </symbol>
+    <symbol id="quote" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M11.192 15.757c0-.88-.23-1.618-.69-2.217c-.326-.412-.768-.683-1.327-.812c-.55-.128-1.07-.137-1.54-.028c-.16-.95.1-1.956.76-3.022c.66-1.065 1.515-1.867 2.558-2.403L9.372 5c-.8.396-1.56.898-2.26 1.505c-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69s-.345 2.04-.216 3.1c.168 1.4.62 2.52 1.356 3.35C5.837 18.58 6.754 19 7.85 19c.965 0 1.766-.29 2.4-.878c.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217c-.326-.42-.77-.692-1.327-.817c-.56-.124-1.073-.13-1.54-.022c-.16-.94.09-1.95.752-3.02c.66-1.06 1.513-1.86 2.556-2.4L18.49 5c-.8.396-1.555.898-2.26 1.505a11.29 11.29 0 0 0-1.894 2.094c-.556.79-.97 1.68-1.24 2.69a8.042 8.042 0 0 0-.217 3.1c.166 1.4.616 2.52 1.35 3.35c.733.834 1.647 1.252 2.743 1.252c.967 0 1.768-.29 2.402-.877c.627-.576.942-1.365.942-2.368v.011z" />
+    </symbol>
+    <symbol id="play" viewBox="0 0 32 32">
+      <path fill="currentColor"
+        d="M7 28a1 1 0 0 1-1-1V5a1 1 0 0 1 1.482-.876l20 11a1 1 0 0 1 0 1.752l-20 11A1 1 0 0 1 7 28ZM8 6.69v18.62L24.925 16Z" />
+    </symbol>
+    <symbol id="balloon" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+        <path
+          d="M8 16.607c1.15.86 2.518 1.38 4 1.393c4.142.034 7.594-3.92 7.56-8.196C19.527 5.53 16.142 2.034 12 2c-4.142-.034-7.473 3.404-7.44 7.68A8.88 8.88 0 0 0 5.244 13" />
+        <path
+          d="M15.5 9a3.035 3.035 0 0 0-3-3M12 20.35c.321 0 .482 0 .593-.022c.654-.128 1.051-.772.858-1.39c-.033-.105-.109-.242-.261-.515M12 20.35c-.321 0-.482 0-.593-.022c-.654-.128-1.051-.772-.858-1.39c.033-.105.109-.242.261-.515M12 20.35v2.15" />
+      </g>
+    </symbol>
+    <symbol id="bag-heart" viewBox="0 0 24 24">
+      <g fill="none">
+        <path fill="currentColor"
+          d="m12 12.191l-.519.542a.75.75 0 0 0 1.038 0L12 12.191Zm-.957 3.675l-.444.604l.444-.604Zm1.914 0l-.444-.605l.444.605Zm-.957.462v.75v-.75Zm-.514-1.067c-.417-.307-.878-.69-1.227-1.093c-.368-.426-.509-.757-.509-.971h-1.5c0 .77.441 1.45.875 1.952c.453.525 1.014.984 1.474 1.321l.887-1.21ZM9.75 13.197c0-.576.263-.827.492-.907c.25-.088.714-.06 1.24.443l1.037-1.083c-.825-.79-1.861-1.096-2.773-.776c-.934.327-1.496 1.226-1.496 2.323h1.5Zm3.65 3.273c.46-.337 1.022-.796 1.475-1.32c.434-.502.875-1.183.875-1.953h-1.5c0 .214-.141.545-.51.971c-.348.403-.809.786-1.226 1.093l.887 1.21Zm2.35-3.273c0-1.097-.563-1.996-1.496-2.323c-.912-.32-1.948-.014-2.773.776l1.038 1.083c.525-.503.989-.531 1.24-.443c.228.08.491.33.491.907h1.5ZM10.6 16.47c.368.27.782.608 1.4.608v-1.5c-.024 0-.04 0-.094-.03a4 4 0 0 1-.42-.287l-.887 1.21Zm1.914-1.21a4 4 0 0 1-.42.289c-.054.029-.07.029-.094.029v1.5c.618 0 1.032-.337 1.4-.608l-.886-1.21Z" />
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
+          d="M9 6V5a3 3 0 1 1 6 0v1m5.224 6.526c-.586-3.121-.878-4.682-1.99-5.604C17.125 6 15.537 6 12.36 6h-.72c-3.176 0-4.764 0-5.875.922c-1.11.922-1.403 2.483-1.989 5.604c-.823 4.389-1.234 6.583-.034 8.029C4.942 22 7.174 22 11.639 22h.722c4.465 0 6.698 0 7.897-1.445c.696-.84.85-1.93.696-3.555" />
+      </g>
+    </symbol>
+    <symbol id="handiplast" viewBox="0 0 24 24">
+      <g fill="none">
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
+          d="M13.5 7.642L9.071 3.213a4.142 4.142 0 0 0-5.858 5.858L14.93 20.787a4.142 4.142 0 0 0 5.858-5.858l-4.358-4.358" />
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
+          d="m12 17.858l-2.929 2.929A4.142 4.142 0 0 1 2.596 20m3.546-8l-2.929 2.929c-.322.322-.58.685-.774 1.071M12 6.142l2.929-2.929a4.142 4.142 0 1 1 5.858 5.858L17.857 12" />
+        <path fill="currentColor"
+          d="M15.841 12.871a.788.788 0 1 1-1.114 1.114a.788.788 0 0 1 1.114-1.114Zm-3.712-3.712a.787.787 0 1 0-1.114 1.114a.787.787 0 0 0 1.114-1.114Zm4.641 6.497a.787.787 0 1 1-1.114 1.114a.787.787 0 0 1 1.114-1.114ZM9.345 8.23A.788.788 0 1 0 8.23 9.346A.788.788 0 0 0 9.345 8.23Zm3.712 3.713a.787.787 0 1 1-1.113 1.114a.787.787 0 0 1 1.113-1.114Zm.928 2.785a.788.788 0 1 1-1.114 1.113a.788.788 0 0 1 1.114-1.113Zm-3.712-3.713a.787.787 0 1 0-1.114 1.114a.787.787 0 0 0 1.114-1.114Z" />
+      </g>
+  </svg>
+
+  <header id="header" class="fixed left-0 right-0 z-50 text-black rounded-l-sm bg-white shadow-md">
+    <nav class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        
+        <a href="index.html" class="flex items-center">
+          <img src="images/logo-lumibox-2.png" alt="Logo" class="h-30 w-50">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden py-5 lg:flex items-center space-x-8">
+          <a href="#intro"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary active transition-colors">Menú principal</a>
+          <a href="#about"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors">¿Qué es Lumibox?</a>
+          <a href="#featured-products"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors">Funciones</a>
+          <a href="#testimonials"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors">Reseñas</a>
+          <a href="#subscribe"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors">Suscríbete</a>
+          <a href="https://github.com/d1360-f10r3s/Proyecto-1-pagina-estatica" target="_blank"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors underline">GITHUB</a>
+        </div>
+
+        <button class="lg:hidden focus:outline-none" aria-label="Toggle menu" id="mobile-menu-button">
+          <svg class="text-black w-12 h-12">
+            <use xlink:href="#navbar-icon"></use>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu"
+        class="hidden lg:hidden fixed inset-0 bg-white z-50 overflow-y-auto transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex justify-between items-center mb-8">
+            <a href="index.html" class="flex items-center">
+              <img src="images/logo-lumibox-2.png" alt="Logo" class="h-20 w-40">
+            </a>
+            <button id="mobile-menu-close" class="text-black focus:outline-none">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex flex-col space-y-6 text-lg">
+            <a href="#intro" class="font-medium hover:text-primary transition-colors">Menú principal</a>
+            <a href="#about" class="font-medium hover:text-primary transition-colors">¿Qué es LumiBox?</a>
+            <a href="#featured-products" class="font-medium hover:text-primary transition-colors">Funciones</a>
+            <a href="#testimonials" class="font-medium hover:text-primary transition-colors">Reseñas</a>
+            <a href="#subscribe" class="font-medium hover:text-primary transition-colors">Suscríbete</a>
+            <a href="https://github.com/d1360-f10r3s/Proyecto-1-pagina-estatica" target="_blank"
+            class="font-heading text-gray-600 font-medium hover:text-primary active:text-primary transition-colors underline">GITHUB</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="intro" class="relative w-full h-screen overflow-hidden">
+
+  <img src="images/lumibox-image-black.png"
+  class="absolute inset-0 w-full h-full object-cover"
+  alt="LumiBox Black Edition">
+
+  <div class="absolute inset-0 bg-black/60"> </div>
+
+  <div class="absolute bottom-0 w-full h-64 bg-gradient-to-t from-yellow-200 via-yellow-200/50 to-transparent"> </div>
+
+  <div class="relative z-10 flex items-center justify-center h-full text-center">
+    <div class="bg-black/30 rounded-3xl">
+      <h1 class="text-yellow-300 text-[100px] font-bold leading-none">
+        Lumi<span class="text-white">Box</span>
+      </h1>
+      <p class="text-white mt-3 text-lg -tracking-tighter">
+        Modular • Multifuncional • Innovador
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+
+      <div class="lg:w-1/2">
+        <img src="images/Lumibox-interior.png" 
+        alt="LumiBox White Edition"
+        class="rounded-4xl w-full h-[450px] object-cover shadow-2xl">
+      </div>
+
+      <div class="lg:w-1/2">
+        <h2 class="text-4xl font-heading font-bold text-gray-900 mb-6">
+          ¿Qué es LumiBox?
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed text-xl mb-6">
+          LumiBox es un cubo modular inteligente diseñado para combinar 
+          tecnología, diseño y funcionalidad en un solo dispositivo. 
+          Su estructura versátil permite integrar múltiples herramientas 
+          dentro de un formato compacto y moderno.
+        </p>
+
+        <p class="text-gray-600 text-xl leading-relaxed">
+          Pensado para adaptarse a cualquier espacio, LumiBox no solo es 
+          un accesorio tecnológico, sino una pieza personalizable que 
+          evoluciona contigo. Es innovación práctica, estética minimalista 
+          y creatividad en un solo concepto.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="featured-products" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="lg:w-1/3 md:w-2/3 mx-auto">
+      <div class="text-center mt-0 mb-10">
+        <h2 class="text-primary font-heading text-5xl font-bold mt-8">Funciones</h2>
+        <p class="text-2xl mt-5">Descubre las funciones únicas de LumiBox</p>
+      </div>
+    </div>
+    <div class="swiper product-swiper relative">
+      <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="relative mb-10">
+              <div class="image-holder group overflow-hidden">
+                  <img src="images/Bocina.png" class="rounded-[2rem] transition-transform duration-300">
+                  <div class="mt-7 card-detail text-center relative rounded-2xl bg-white/90 p-8 border border-gray-200 mx-auto w-4/5 shadow-xl transition-all duration-300 mt-8">
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Bocina Bluetooth Integrada
+                </h3>
+                  <p class="mt-3 text-gray-800 leading-relaxed">
+                  La bocina Bluetooth integrada de LumiBox ofrece un sonido claro y envolvente 
+                  con excelente balance entre graves y agudos. Con conexión inalámbrica rápida 
+                  y estable, puedes reproducir tu música, podcasts o contenido favorito desde 
+                  cualquier dispositivo compatible. Su diseño compacto mantiene la estética 
+                  minimalista del cubo sin sacrificar potencia.
+                  </p>
+                </p>
+              </div>
+              </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="relative mb-10">
+              <div class="image-holder group overflow-hidden">
+                  <img src="images/Luces-led-personalizacion.png" class="rounded-[2rem] transition-transform duration-300">
+                  <div class="mt-7 card-detail text-center relative rounded-2xl bg-white/90 p-8 border border-gray-200 mx-auto w-4/5 shadow-xl transition-all duration-300 mt-8">
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Personalización Modular
+                </h3>
+                  <p class="mt-3 text-gray-800 leading-relaxed">
+                  Intercambia paneles y adapta cada cara de LumiBox a tu estilo personal. 
+                  Puedes combinar colores, texturas o diseños especiales para que el cubo 
+                  se integre perfectamente con tu espacio. Su sistema modular permite 
+                  cambiar las caras de forma sencilla y segura, ofreciendo una experiencia 
+                  única y completamente personalizable.
+                  </p>
+                </p>
+              </div>
+              </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="relative mb-10">
+              <div class="image-holder group overflow-hidden">
+                  <img src="images/Mini-proyector.png" alt="product-item" class="rounded-[2rem] transition-transform duration-300">
+                  <div class="mt-7 card-detail text-center relative rounded-2xl bg-white/90 p-8 border border-gray-200 mx-auto w-4/5 shadow-xl transition-all duration-300 mt-8">
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Mini Proyector Integrado
+                </h3>
+                  <p class="mt-3 text-gray-800 leading-relaxed">
+                  El mini proyector integrado transforma cualquier pared o superficie 
+                  en una pantalla dinámica. Ideal para proyectar imágenes decorativas, 
+                  animaciones ambientales o contenido ligero, añade un toque innovador 
+                  y futurista a tu habitación. Todo esto en un formato compacto que 
+                  mantiene la elegancia y funcionalidad de LumiBox.
+                  </p>
+                </p>
+              </div>
+              </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="relative mb-10">
+              <div class="image-holder group overflow-hidden">
+                  <img src="images/Alcancia.png" alt="product-item" class="rounded-[2rem] transition-transform duration-300">
+                  <div class="mt-7 card-detail text-center relative rounded-2xl bg-white/90 p-8 border border-gray-200 mx-auto w-4/5 shadow-xl transition-all duration-300 mt-8">
+                <h3 class="text-2xl font-bold text-gray-900">
+                  Alcancia con Contador Digital
+                </h3>
+                  <p class="mt-3 text-gray-800 leading-relaxed">
+                  La alcancía inteligente detecta y registra automáticamente cada moneda 
+                  que ingresas, mostrando el total acumulado en un sistema digital integrado. 
+                  Es una forma práctica y moderna de ahorrar mientras mantienes el control 
+                  de tus finanzas. Su mecanismo interno está diseñado para ser preciso, 
+                  seguro y fácil de usar.
+                  </p>
+                </p>
+              </div>
+              </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="relative mb-10">
+              <div class="image-holder group overflow-hidden">
+                  <img src="images/Lumibox-futuro.png" alt="product-item" class="rounded-[2rem] transition-transform duration-300">
+                  <div class="mt-7 card-detail text-center relative rounded-2xl bg-white/90 p-8 border border-gray-200 mx-auto w-4/5 shadow-xl transition-all duration-300 mt-8">
+                <h3 class="text-2xl font-bold text-gray-900">
+                  El futuro de LumiBox
+                </h3>
+                  <p class="mt-3 text-gray-800 leading-relaxed">
+                  Y esto es solo el comienzo. Los futuros modelos de LumiBox incorporarán 
+                  aún más funciones inteligentes como reloj digital, despertador personalizable, 
+                  sistema de alarmas, calendario interactivo y asistente de voz integrado. 
+                  La visión de LumiBox es evolucionar constantemente para convertirse en 
+                  un centro multifuncional que combine tecnología, diseño y utilidad en un 
+                  solo dispositivo.
+                  </p>
+                </p>
+              </div>
+              </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="swiper-pagination absolute left-0 right-0 bottom-0 flex justify-center mb-4 z-10"></div>
+    </div>
+  </div>
+
+  <section id="testimonials" class="relative py-10">
+    <div class="container mx-auto">
+      <div class="flex justify-center">
+        <div class="review-content w-full lg:w-8/12">
+          <div class="quotation-mark text-center">
+            <svg class="quote text-stone-400 w-40 h-40 mx-auto">
+              <use xlink:href="#quote"/>
+            </svg>
+          </div>
+          <div class="swiper review-swiper relative">
+            <div class="swiper-wrapper">
+              
+              <div class="swiper-slide">
+                <div class="review-item text-center w-full">
+                  <p class="font-thin text-4xl">LumiBox ha transformado por completo la forma en que organizo y disfruto mi espacio. La combinación de utilidades es increíble.
+                  </p>
+                  <div class="author-detail">
+                    <div class="name text-2xl pt-4">- Masahiro Sakurai</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="swiper-slide">
+                <div class="review-item text-center w-full">
+                  <p class="font-thin text-4xl">Desde que tengo LumiBox, mi escritorio se siente mucho más funcional. La calidad del sonido es sorprendente para su tamaño y la opción de personalizar cada cara le da un toque único.</p>
+                  <div class="author-detail">
+                    <div class="name text-2xl pt-4">- Tony Stark</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-item text-center w-full">
+                  <p class="font-thin text-4xl">Lo que más me gusta de LumiBox es su versatilidad. No es solo un gadget, es una experiencia completa en un diseño compacto y elegante.</p>
+                  <div class="author-detail">
+                    <div class="name text-2xl pt-4">- Kanye West</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bullets Swiper: posición absoluta, centrado abajo, fuera del texto -->
+          <div class="swiper-pagination absolute left-0 right-0 bottom-0 flex justify-center mb-4 z-10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="w-full bg-white/95 rounded-4xl py-10 px-6 lg:px-24 shadow-xl">
+
+  <div class="text-center mb-16">
+    <h2 class="text-primary font-heading text-4xl lg:text-5xl font-bold">
+      ¿Por qué elegir LumiBox?
+    </h2>
+    <p class="text-gray-600 text-xl mt-6 tracking-wide">
+      Va más allá de un simple objeto decorativo
+    </p>
+
+  <div class="max-w-2xl mx-auto space-y-12">
+
+    <div class="text-center">
+      <h3 class="text-2xl font-bold text-gray-900 mt-6">
+        Innovación en un solo dispositivo
+      </h3>
+      <p class="text-gray-600 mt-4 text-xl leading-relaxed">
+        Integra múltiples funciones como bocina Bluetooth, mini proyector 
+        y alcancía inteligente en un diseño compacto y moderno.
+      </p>
+    </div>
+
+    <div class="text-center">
+      <h3 class="text-2xl font-bold mt-4 text-gray-900 mb-4">
+        Diseño Modular y Personalizable
+      </h3>
+      <p class="text-gray-600 mt-4 text-xl leading-relaxed">
+        Adapta cada cara de LumiBox a tu estilo y espacio. 
+        Su estructura versátil permite evolucionar junto a ti.
+      </p>
+    </div>
+
+    <div class="text-center">
+      <h3 class="text-2xl mt-4 font-bold text-gray-900 mb-4">
+        Tecnología que Evoluciona
+      </h3>
+      <p class="text-gray-600 mt-4 text-xl leading-relaxed">
+        Futuros modelos incluirán más funciones inteligentes que ampliarán 
+        la experiencia LumiBox.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <section id="services" class="mt-40 ">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap">
+        
+        <div class="lg:w-1/3 md:w-1/2 w-full px-4 mb-8">
+          <div class="icon-box text-center">
+            <div class="icon-box-icon mb-6">
+              <svg class="balloon text-primary w-10 h-10 mx-auto" width="39" height="39">
+                <use xlink:href="#balloon"></use>
+              </svg>
+            </div>
+            <div class="icon-box-content px-4">
+              <div class="icon-title text-xl font-bold capitalize">100% Alta Calidad de Producto</div>
+              <p class="text-xl">Tenemos opción de envío</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/3 md:w-1/2 w-full px-4 mb-8">
+          <div class="icon-box text-center">
+            <div class="icon-box-icon mb-6">
+              <svg class="bag-heart text-primary w-10 h-10 mx-auto" width="39" height="39">
+                <use xlink:href="#bag-heart"></use>
+              </svg>
+            </div>
+            <div class="icon-box-content px-4">
+              <div class="icon-title text-xl font-bold capitalize">Envío Gratis</div>
+              <p class="text-xl">Envíos dentro del país</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/3 md:w-1/2 w-full px-4 mb-8">
+          <div class="icon-box text-center">
+            <div class="icon-box-icon mb-6">
+              <svg class="handiplast text-primary w-10 h-10 mx-auto" width="39" height="39">
+                <use xlink:href="#handiplast"></use>
+              </svg>
+            </div>
+            <div class="icon-box-content px-4">
+              <div class="icon-title text-xl font-bold capitalize">Devolución de Dinero</div>
+              <p class="text-xl">Devolveremos tu dinero en algunos casos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <section id="subscribe" class="py-32">
+  <div class="container mx-auto px-4 flex flex-col items-center">
+
+    <div class="w-full max-w-xl text-center">
+
+      <div class="mb-8">
+        <h2 class="text-primary font-heading text-5xl font-bold">
+          Suscríbete
+        </h2>
+
+        <p class="text-xl mt-6">
+          Deja tu correo electrónico para recibir novedades y ofertas exclusivas.
+        </p>
+      </div>
+
+      <form id="form" class="w-full flex flex-col items-center gap-6">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Correo electrónico"
+          class="w-full max-w-md p-6 text-xl rounded bg-white focus:ring-2 focus:ring-primary focus:outline-none shadow-md"
+        >
+
+        <button 
+          type="submit"
+          class="mt-4 font-heading text-dark uppercase font-bold px-8 py-4 bg-yellow-300 rounded-lg shadow-lg transition-all duration-200 text-xl tracking-wider hover:bg-yellow-400 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <section class="relative w-full overflow-hidden">
+  <img src="images/lumibox-image-white.png"
+      class="absolute inset-0 w-full h-full object-cover"
+      alt="LumiBox White Edition">
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="absolute bottom-0 w-full h-40 bg-linear-to-t from-yellow-200/80 to-transparent"></div>
+
+  <div class="relative z-10 flex flex-col items-center justify-center text-center py-32 px-6"> 
+      <div class="bg-white rounded-3xl">
+      <img src="images/logo-lumibox-2.png" alt="LumiBox logo" class="h-60 w-120 mb-2 mx-auto">
+      </div>
+      <h1 class="text-white text-5xl md:text-7xl lg:text-8xl mt-4 font-light leading-none">
+      "Ilumina tu vida"
+      </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
